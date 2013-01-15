@@ -108,6 +108,30 @@ TokenPhrase.generate :patterns => your_patterns
 => "awesome-mauve-magic-eye-giraffe"
 ```
 
+## Unique Tokens in Rails
+
+The simplest way to create a unique token for your models is to add a before_create filter to your model: 
+
+```ruby
+#assuming your Thing model has a token property
+class Thing < ActiveRecord::Base
+  before_create :generate_token
+  
+  private
+  def generate_token
+    begin
+      self.token = TokenPhrase.generate
+    end while self.class.exists?(token: token)
+  end
+end
+```
+
+This will prevent duplicates with a while loop checking for a Thing record with the token you just generated. This can get expensive with multiple duplicates, so if you will be creating many tokens, it might be a good idea to append a number to the token:
+
+```ruby
+TokenPhrase.generate + rand(10000000).to_s
+=> "old-fashioned-golden-checked-skunk4967165"
+```
 
 ## Contributing
 
