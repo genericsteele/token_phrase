@@ -23,18 +23,18 @@ Or install it yourself as:
 ## TokenPhrase.generate(separator = nil, dictionaries = {})
 
 ### Defaults
-By default, TokenPhrase uses the included dictionaries and separates everything with a hyphen (-):
+By default, TokenPhrase uses the included dictionaries, separates everything with a hyphen (-), and appends a random number between 1 and 1,000,000 :
 
 ```ruby
 TokenPhrase.generate
-=> "ultimate-blue-glossy-lamp"
+=> "ultimate-beige-tartan-pants557846"
 
 5.times { p TokenPhrase.generate }
-"energetic-white-checked-book"
-"genetically-modified-red-argyle-lego-set"
-"strong-yellow-wavy-machine"
-"sugarfilled-blue-glossy-jacket"
-"sour-ultraviolet-plaid-sand"
+"amazing-golden-plaid-dishwasher214832"
+"thunderous-yellow-matte-greyhound516648"
+"bodacious-violet-houndstooth-viper351290"
+"dancing-golden-spotted-cardinal623081"
+"sweet-jade-cracked-cape975328"
 ```
 
 ### Separators
@@ -42,10 +42,10 @@ If you would like a different separator, just pass a string as an argument:
 
 ```ruby
 TokenPhrase.generate('$')
-=> "exciting$taupe$glossy$lake"
+=> "vegan$blue$spotted$capybara649484"
 
-TokenPhrase.generate('!!!eric!!!')
-=> "splendid!!!eric!!!golden!!!eric!!!glossy!!!eric!!!flounder"
+TokenPhrase.generate('MARSIPAN')
+=> "bodaciousMARSIPANaquaMARSIPANmatteMARSIPANcardinal611650"
 ```
 
 ### Dictionaries
@@ -60,35 +60,44 @@ If you want to replace the dictionary, just pass a hash with an array as an argu
 
 ```ruby
 TokenPhrase.generate :adjectives => %w(glowing)
-=> "glowing-tan-striped-sand"
+=> "glowing-white-striped-tapir168706"
 
 5.times { p TokenPhrase.generate :nouns => %w(Mercury Venus Earth Mars Jupiter Saturn Uranus Neptune Pluto) }
-"home-made-lime-plaid-Pluto"
-"bluetooth-lime-wavy-Jupiter"
-"sugarfilled-tan-pinstriped-Mars"
-"magnetic-pink-polka-dotted-Saturn"
-"grandmas-white-plaid-Pluto"
+"better-red-satin-Venus956045"
+"awesome-pearl-glossy-Saturn284244"
+"sour-sea-green-checked-Saturn711076"
+"groovy-lime-argyle-Venus213795"
+"old-fashioned-topaz-waved-Pluto922970"
 ```
 You can pass multiple dictionaries: 
 
 ```ruby
 5.times { p TokenPhrase.generate :colors => %w(black white), :nouns => %w(cat dog) }
-"spectacular-black-argyle-dog"
-"wind-up-white-plaid-cat"
-"glazed-white-polka-dotted-cat"
-"bodacious-black-checked-cat"
-"genetically-modified-white-pinstriped-dog"
+"grass-fed-white-polka-dotted-cat307486"
+"grass-fed-black-cracked-cat882907"
+"bluetooth-white-satin-dog77769"
+"ultimate-black-fractal-dog328541"
+"spectacular-black-satin-cat815018"
 ```
 
 And you can, of course pass a separator before the dictionaries:
 
 ```ruby
 5.times { p TokenPhrase.generate '^^^', :patterns => %w(striped), :adjectives =>%w(great awesome) }
-"great^^^brown^^^striped^^^door"
-"great^^^silver^^^striped^^^carpenter"
-"great^^^lime^^^striped^^^crane"
-"great^^^taupe^^^striped^^^envelope"
-"great^^^pink^^^striped^^^sand"
+"great^^^cornflower^^^blue^^^striped^^^machine662941"
+"awesome^^^pearl^^^striped^^^banana^^^slug313429"
+"awesome^^^navy^^^blue^^^striped^^^shirt279849"
+"awesome^^^midnight^^^blue^^^striped^^^shark379464"
+"awesome^^^ultraviolet^^^striped^^^hat748152"
+```
+
+## Numbers
+
+To help with uniqueness, a random number is added to the token by default. This may not be your cup of tea, so if you pass :numbers => false with the dictionaries, you can remove the number:
+
+```ruby
+TokenPhrase.generate(:numbers => false)
+=> "glazed-magenta-houndstooth-spider-wolf"
 ```
 
 ## Dictionary Methods
@@ -108,7 +117,7 @@ TokenPhrase.generate :patterns => your_patterns
 => "awesome-mauve-magic-eye-giraffe"
 ```
 
-## Unique Tokens in Rails
+## Uniqueness
 
 The simplest way to create a unique token for your models is to add a before_create filter to your model: 
 
@@ -124,13 +133,6 @@ class Thing < ActiveRecord::Base
     end while self.class.exists?(token: token)
   end
 end
-```
-
-This will prevent duplicates with a while loop checking for a Thing record with the token you just generated. This can get expensive with multiple duplicates, so if you will be creating many tokens, it might be a good idea to append a number to the token:
-
-```ruby
-TokenPhrase.generate + rand(10000000).to_s
-=> "old-fashioned-golden-checked-skunk4967165"
 ```
 
 ## Contributing
