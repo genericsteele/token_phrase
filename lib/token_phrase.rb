@@ -22,16 +22,16 @@ module TokenPhrase
     TokenPhrase::Nouns
   end
   
-  def self.generate(separator = nil, parts = {})
+  def self.generate(separator = nil, dictionaries = {})
     if separator.is_a?(Hash)
-      parts = separator
+      dictionaries = separator
       separator = nil
     end
-    parts[:adjectives] ||= TokenPhrase::Adjectives
-    parts[:colors] ||= TokenPhrase::Colors
-    parts[:patterns] ||= TokenPhrase::Patterns
-    parts[:nouns] ||= TokenPhrase::Nouns
-    phrase = [parts[:adjectives].sample, parts[:colors].sample, parts[:patterns].sample, parts[:nouns].sample].join('-')
+    dictionaries[:adjectives] ||= TokenPhrase::Adjectives
+    dictionaries[:colors] ||= TokenPhrase::Colors
+    dictionaries[:patterns] ||= TokenPhrase::Patterns
+    dictionaries[:nouns] ||= TokenPhrase::Nouns
+    phrase = [dictionaries[:adjectives].sample, dictionaries[:colors].sample, dictionaries[:patterns].sample, dictionaries[:nouns].sample].join('-')
     phrase.gsub!(/-/, separator) unless separator.nil?
     return phrase
   end
