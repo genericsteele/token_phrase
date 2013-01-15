@@ -73,10 +73,10 @@ You can pass multiple dictionaries:
 
 ```ruby
 5.times { p TokenPhrase.generate :colors => %w(black white), :nouns => %w(cat dog) }
-"spectacular-white-argyle-dog"
+"spectacular-black-argyle-dog"
 "wind-up-white-plaid-cat"
 "glazed-white-polka-dotted-cat"
-"bodacious-white-checked-cat"
+"bodacious-black-checked-cat"
 "genetically-modified-white-pinstriped-dog"
 ```
 
@@ -116,3 +116,7 @@ TokenPhrase.generate :patterns => your_patterns
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## Sellmer
+
+I built TokenPhrase for use with [Sellmer](http://justsellstuff.com). I'm using token phrases for public-facing sales tokens as a way to give the application a little more personality and to make supporting sales and transactions easier. Sellmer is almost ready for beta testers, so if you are interested in being one of the first people to get their hands on it, head over to the [Sellmer page](http://justsellstuff.com) and add your email to the list. I'm looking forward to launching with features as big and as small as token phrase.
