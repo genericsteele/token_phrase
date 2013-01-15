@@ -37,6 +37,8 @@ TokenPhrase.generate
 "sweet-jade-cracked-cape975328"
 ```
 
+With the current dictionaries and numbers, there are 4,199,040,000,000 (four trillion!) unique possibilites.
+
 ### Separators
 If you would like a different separator, just pass a string as an argument: 
 
@@ -91,7 +93,7 @@ And you can, of course pass a separator before the dictionaries:
 "awesome^^^ultraviolet^^^striped^^^hat748152"
 ```
 
-## Numbers
+### Numbers
 
 To help with uniqueness, a random number is added to the token by default. This may not be your cup of tea, so if you pass :numbers => false with the dictionaries, you can remove the number:
 
@@ -117,7 +119,22 @@ TokenPhrase.generate :patterns => your_patterns
 => "awesome-mauve-magic-eye-giraffe"
 ```
 
-## Uniqueness
+## TokenPhrase.permutations(dictionaries = {})
+
+If you want to see how many unique combinations you can generate, use the permutations method. Just pass it the dictionaries hash the same way you would use TokenPhrase.generate: 
+
+```ruby
+TokenPhrase.permutations
+=> 4199040000000
+
+TokenPhrase.permutations :nouns => %w(cat dog)
+=> 87480000000
+
+TokenPhrase.permutations :nouns => %w(scooter boat car vroom-vroom), :numbers => false
+=> 174960
+```
+
+## Rails Uniqueness
 
 The simplest way to create a unique token for your models is to add a before_create filter to your model: 
 
