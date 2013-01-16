@@ -6,6 +6,8 @@ TokenPhrase is a simple gem that generates unique phrases for you to use in your
 
 TokenPhrase was built for [Sellmer](http://justsellstuff.com), a simple yet powerful way to sell your digital goods.
 
+The current version is 1.0.4
+
 ## Installation
 
 Add this line to your application's Gemfile:
