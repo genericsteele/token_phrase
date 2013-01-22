@@ -1,12 +1,10 @@
-# TokenPhrase
+# TokenPhrase (v1.0.4)
 
 TokenPhrase is a simple gem that generates unique phrases for you to use in your app as tokens.
 
 "Why?" you may be asking. Why not? Token phrases give your app a little personality and make support a lot easier.
 
 TokenPhrase was built for [Sellmer](http://justsellstuff.com), a simple yet powerful way to sell your digital goods.
-
-The current version is 1.0.4
 
 ## Installation
 
@@ -101,7 +99,7 @@ To help with uniqueness, a random number is added to the token by default. This 
 
 ```ruby
 TokenPhrase.generate(:numbers => false)
-=> "glazed-magenta-houndstooth-spider-wolf"
+=> "energetic-yellow-pinstriped-skunk"
 ```
 
 ## Dictionary Methods
@@ -117,8 +115,9 @@ Each of these dictionary methods accept an array as an argument that will merge 
 
 ```ruby
 your_patterns = TokenPhrase.patterns %w(magic-eye)
-TokenPhrase.generate :patterns => your_patterns
-=> "awesome-mauve-magic-eye-giraffe"
+2.times { p TokenPhrase.generate :patterns => your_patterns }
+"prickly-magenta-matte-space-heater-687093"
+"stupendous-aquamarine-magic-eye-skunk-690072"
 ```
 
 ## TokenPhrase.permutations(dictionaries = {})
@@ -165,3 +164,7 @@ end
 ## Sellmer
 
 I built TokenPhrase for use with [Sellmer](http://justsellstuff.com). I'm using token phrases for public-facing sales tokens as a way to give the application a little more personality and to make supporting sales and transactions easier. Sellmer is almost ready for beta testers, so if you are interested in being one of the first people to get their hands on it, head over to the [Sellmer page](http://justsellstuff.com) and add your email to the list. I'm looking forward to launching with features as big and as small as token phrase.
+
+## Thanks
+
+Thanks to [benolee](https://github.com/benolee) for [refactoring the generator model](https://github.com/genericsteele/token_phrase/commit/7e5a0877882ba7d08f0c5a40d7873ebb0d205a45)!
