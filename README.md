@@ -29,14 +29,14 @@ By default, TokenPhrase uses the included dictionaries, separates everything wit
 
 ```ruby
 TokenPhrase.generate
-=> "ultimate-beige-tartan-pants557846"
+=> "groovy-red-fractal-fork-101589"
 
 5.times { p TokenPhrase.generate }
-"amazing-golden-plaid-dishwasher214832"
-"thunderous-yellow-matte-greyhound516648"
-"bodacious-violet-houndstooth-viper351290"
-"dancing-golden-spotted-cardinal623081"
-"sweet-jade-cracked-cape975328"
+"bodacious-blue-spotted-envelope-428491"
+"magnetic-burnt-orange-polka-dotted-spider-wolf-268974"
+"conservative-plum-paisley-banana-slug-771632"
+"bluetooth-chiffon-houndstooth-wolf-spider-700306"
+"sweet-violet-tartan-coyote-16101"
 ```
 
 With the current dictionaries and numbers, there are 4,199,040,000,000 (four trillion!) unique possibilites.
@@ -46,10 +46,10 @@ If you would like a different separator, just pass a string as an argument:
 
 ```ruby
 TokenPhrase.generate('$')
-=> "vegan$blue$spotted$capybara649484"
+=> "groovy$salmon$paisley$cape$848536"
 
 TokenPhrase.generate('MARSIPAN')
-=> "bodaciousMARSIPANaquaMARSIPANmatteMARSIPANcardinal611650"
+=> "sugarfilledMARSIPANcrimsonMARSIPANstripedMARSIPANfrogMARSIPAN860203"
 ```
 
 ### Dictionaries
@@ -64,35 +64,35 @@ If you want to replace the dictionary, just pass a hash with an array as an argu
 
 ```ruby
 TokenPhrase.generate :adjectives => %w(glowing)
-=> "glowing-white-striped-tapir168706"
+=> "glowing-peach-glossy-barracuda-743220"
 
 5.times { p TokenPhrase.generate :nouns => %w(Mercury Venus Earth Mars Jupiter Saturn Uranus Neptune Pluto) }
-"better-red-satin-Venus956045"
-"awesome-pearl-glossy-Saturn284244"
-"sour-sea-green-checked-Saturn711076"
-"groovy-lime-argyle-Venus213795"
-"old-fashioned-topaz-waved-Pluto922970"
+"stupendous-crimson-tartan-Uranus-431203"
+"tailored-khaki-fractal-Neptune-957683"
+"better-almond-striped-Pluto-299491"
+"soft-chiffon-tartan-Saturn-29752"
+"tailored-azure-honeycomb-Saturn-668823"
 ```
 You can pass multiple dictionaries: 
 
 ```ruby
 5.times { p TokenPhrase.generate :colors => %w(black white), :nouns => %w(cat dog) }
-"grass-fed-white-polka-dotted-cat307486"
-"grass-fed-black-cracked-cat882907"
-"bluetooth-white-satin-dog77769"
-"ultimate-black-fractal-dog328541"
-"spectacular-black-satin-cat815018"
+"windy-white-satin-dog-663888"
+"exciting-black-spotted-cat-502218"
+"sour-white-houndstooth-cat-591001"
+"thunderous-white-pinstriped-cat-375006"
+"grandpas-white-honeycomb-cat-23992"
 ```
 
 And you can, of course pass a separator before the dictionaries:
 
 ```ruby
 5.times { p TokenPhrase.generate '^^^', :patterns => %w(striped), :adjectives =>%w(great awesome) }
-"great^^^cornflower^^^blue^^^striped^^^machine662941"
-"awesome^^^pearl^^^striped^^^banana^^^slug313429"
-"awesome^^^navy^^^blue^^^striped^^^shirt279849"
-"awesome^^^midnight^^^blue^^^striped^^^shark379464"
-"awesome^^^ultraviolet^^^striped^^^hat748152"
+"awesome^^^aquamarine^^^striped^^^pen^^^345915"
+"great^^^salmon^^^striped^^^pants^^^852927"
+"great^^^white^^^striped^^^spider^^^wolf^^^646401"
+"awesome^^^blue^^^striped^^^people^^^314195"
+"awesome^^^aqua^^^striped^^^wolverine^^^113478"
 ```
 
 ### Numbers

@@ -12,7 +12,7 @@ module TokenPhrase
     end
 
     def generate
-      lists.map(&:sample).join(separator).chomp(separator)
+      lists.map(&:sample).join(separator).chomp(separator).gsub(/-/, separator)
     end
 
     def permutations
