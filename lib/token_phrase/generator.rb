@@ -26,7 +26,7 @@ module TokenPhrase
     end
 
     def lists
-      dictionary.values_at(*order)
+      dictionary.values_at(*order).compact
     end
   end
 end
