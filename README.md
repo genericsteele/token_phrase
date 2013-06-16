@@ -1,4 +1,5 @@
 # TokenPhrase (v1.0.4)
+[![Build Status](https://travis-ci.org/genericsteele/token_phrase.png?branch=master)](https://travis-ci.org/genericsteele/token_phrase)
 
 TokenPhrase is a simple gem that generates unique phrases for you to use in your app as tokens.
 
