@@ -4,6 +4,9 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'token_phrase/version'
 
 Gem::Specification.new do |gem|
+  gem.add_dependency 'backports'
+  gem.add_development_dependency 'minitest'
+  
   gem.name          = "token_phrase"
   gem.version       = TokenPhrase::VERSION
   gem.authors       = ["Eric Steele"]
