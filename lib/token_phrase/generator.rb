@@ -1,3 +1,4 @@
+require 'backports/1.9.2/array/sample'
 module TokenPhrase
   class Generator
     attr_accessor :separator, :dictionary, :order
