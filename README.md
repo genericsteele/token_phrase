@@ -5,8 +5,6 @@ TokenPhrase is a simple gem that generates unique phrases for you to use in your
 
 "Why?" you may be asking. Why not? Token phrases give your app a little personality and make support a lot easier.
 
-TokenPhrase was built for [Sellmer](http://justsellstuff.com), a simple yet powerful way to sell your digital goods.
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -161,10 +159,6 @@ end
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
-
-## Sellmer
-
-I built TokenPhrase for use with [Sellmer](http://justsellstuff.com). I'm using token phrases for public-facing sales tokens as a way to give the application a little more personality and to make supporting sales and transactions easier. Sellmer is almost ready for beta testers, so if you are interested in being one of the first people to get their hands on it, head over to the [Sellmer page](http://justsellstuff.com) and add your email to the list. I'm looking forward to launching with features as big and as small as token phrase.
 
 ## Thanks
 
