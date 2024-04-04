@@ -44,6 +44,16 @@ class GeneratorTest < MiniTest::Unit::TestCase
     assert_match /test/, phrase
   end
 
+  def test_default_numbers_is_an_integer
+    numbers = TokenPhrase.numbers.sample
+    assert numbers.is_a? Integer
+  end
+
+  def test_default_numbers_within_upper_limit
+    numbers = TokenPhrase.numbers.sample
+    assert numbers.between?(0, TokenPhrase::RANDOM_NUMBER_UPPER_LIMIT)
+  end
+
   def test_that_dictionaries_can_be_added_to
     adjectives = TokenPhrase.adjectives %w(test)
     colors = TokenPhrase.colors %w(test)
